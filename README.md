@@ -32,15 +32,16 @@ lesson. Then run these commands to set up the dependencies and set up the
 database:
 
 ```console
-$ pipenv install
+$ pipenv install && pipenv shell
+
 # => Installing dependencies from Pipfile.lock (xxxxxx)...
 # =>   🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ X/X — XX:XX:XX
-# => To activate this project's virtualenv, run pipenv shell.
+# => To activate this projects virtualenv, run pipenv shell.
 # => Alternatively, run a command inside the virtualenv with pipenv run.
-$ pipenv shell
 # => Launching subshell in virtual environment...
 # =>  . /python-p3-working-with-seed-data/.venv/bin/activate
 # => $  . /python-p3-working-with-seed-data/.venv/bin/activate
+
 $ cd seed_db && alembic upgrade head
 ```
 
