@@ -143,7 +143,7 @@ write code that uses SQLAlchemy methods to create new records. Add this to
 the `app/seed.py` file below the creation of the `session` object:
 
 ```py
-# db/seed.py
+# seed_db/app/seed.py
 
 ...
 
