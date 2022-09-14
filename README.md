@@ -201,7 +201,7 @@ this complication in the future. Add these commands right after the
 instantiation of your `session` (but before the creation of any new records):
 
 ```py
-session.delete(Game)
+session.query(Game).delete()
 session.commit()
 ```
 
