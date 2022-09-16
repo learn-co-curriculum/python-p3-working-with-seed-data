@@ -10,7 +10,14 @@
 
 ## Key Vocab
 
+- **Schema**: the blueprint of a database. Describes how data relates to other
+  data in tables, columns, and relationships between them.
 - **Persist**: save a schema in a database.
+- **Engine**: a Python object that translates SQL to Python and vice-versa.
+- **Session**: a Python object that uses an engine to allow us to
+  programmatically interact with a database.
+- **Transaction**: a strategy for executing database statements such that
+  the group succeeds or fails as a unit.
 - **Migration**: the process of moving data from one or more databases to one
   or more target databases.
 - **Seed**: to fill a database with an initial set of data.
