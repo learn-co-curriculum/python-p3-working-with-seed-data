@@ -10,9 +10,5 @@ faker = "*"
 ipdb = "*"
 pytest = "*"
 
-[dev-packages]
-pytest = "*"
-ipdb = "*"
-
 [requires]
-python_version = "3.8"
+python_version = "3.8.13"
