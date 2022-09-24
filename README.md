@@ -163,7 +163,7 @@ session.bulk_save_objects([botw, ffvii, mk8])
 session.commit()
 ```
 
-To run this code, simply run `python db/seed.py`. You should not see any output
+To run this code, simply run `python app/seed.py`. You should not see any output
 if it executes without error.
 
 Run the `debug.py` script again to enter an `ipdb` shell.
@@ -181,7 +181,7 @@ What happens if we want to add some more data to the database? Well, we could
 try adding another `add` call in our `app/seed.py` file:
 
 ```py
-# py/seed.py
+# seed_db/app/seed.py
 
 botw = Game(title="Breath of the Wild", platform="Switch", genre="Adventure", price=60)
 ffvii = Game(title="Final Fantasy VII", platform="Playstation", genre="RPG", price=30)
