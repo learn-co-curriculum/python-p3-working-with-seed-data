@@ -56,7 +56,7 @@ In this application, we have two migrations: one for our declarative `Base`,
 and a second for a table called `games`.
 
 ```py
-# app//db.py
+# db.py
 
 class Game(Base):
     __tablename__ = 'games'
@@ -148,10 +148,10 @@ instructions we can use:
 
 To use the `seed.py` file to add data to the database, all we need to do is
 write code that uses SQLAlchemy methods to create new records. Add this to
-the `app/seed.py` file below the creation of the `session` object:
+the `seed.py` file below the creation of the `session` object:
 
 ```py
-# seed_db/app/seed.py
+# seed_db/seed.py
 
 ...
 
@@ -163,7 +163,7 @@ session.bulk_save_objects([botw, ffvii, mk8])
 session.commit()
 ```
 
-To run this code, simply run `python db/seed.py`. You should not see any output
+To run this code, simply run `python seed.py`. You should not see any output
 if it executes without error.
 
 Run the `debug.py` script again to enter an `ipdb` shell.
@@ -178,10 +178,10 @@ session.query(Game)[-1]
 Awesome! Exit out of the console.
 
 What happens if we want to add some more data to the database? Well, we could
-try adding another `add` call in our `app/seed.py` file:
+try adding another `add` call in our `seed.py` file:
 
 ```py
-# py/seed.py
+# seed.py
 
 botw = Game(title="Breath of the Wild", platform="Switch", genre="Adventure", price=60)
 ffvii = Game(title="Final Fantasy VII", platform="Playstation", genre="RPG", price=30)
@@ -198,8 +198,8 @@ session.query(Game).count()
 # => 7
 ```
 
-Hmm, we only added four games in the `db/seed.py` file: why are there now seven
-games in the database? Well, remember — every time we run `app/seed.py`, we are
+Hmm, we only added four games in the `seed.py` file: why are there now seven
+games in the database? Well, remember — every time we run `seed.py`, we are
 creating **new** records in the `games` table. There's nothing stopping our code
 from producing duplicate data in the database. We're just instructing SQLAlchemy
 to create new code using this file!
@@ -265,6 +265,8 @@ generate prices). Replace the data after our data deletion in the `seed.py`
 file with the following code:
 
 ```py
+# seed.py
+
 # Add a console message so we can see output when the seed file runs
 print("Seeding games...")
 
@@ -293,7 +295,7 @@ session.commit()
 </details>
 <br/>
 
-Then, run `python app/seed.py` to reseed the database:
+Then, run `python seed.py` to reseed the database:
 
 ```py
 session.query(Game).count()
