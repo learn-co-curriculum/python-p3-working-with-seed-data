@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b8b77743d017895598a5661b29777d80a8d2305b5cdb321e2c7d32eea6ffbf41"
+            "sha256": "250391c31d8d1cd57dc15c5f99d7630a4536762f5e08f454014dcfe862c75833"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -79,6 +79,22 @@
             ],
             "index": "pypi",
             "version": "==15.0.0"
+        },
+        "importlib-metadata": {
+            "hashes": [
+                "sha256:da31db32b304314d044d3c12c79bd59e307889b287ad12ff387b3500835fc2ab",
+                "sha256:ddb0e35065e8938f867ed4928d0ae5bf2a53b7773871bfe6bcc7e4fcdc7dea43"
+            ],
+            "markers": "python_version < '3.9'",
+            "version": "==5.0.0"
+        },
+        "importlib-resources": {
+            "hashes": [
+                "sha256:5481e97fb45af8dcf2f798952625591c58fe599d0735d86b10f54de086a61681",
+                "sha256:f78a8df21a79bcc30cfd400bdc38f314333de7c0fb619763f6b9dabab8268bb7"
+            ],
+            "markers": "python_version < '3.9'",
+            "version": "==5.9.0"
         },
         "iniconfig": {
             "hashes": [
@@ -266,7 +282,7 @@
                 "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
                 "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==2.8.2"
         },
         "setuptools": {
@@ -371,6 +387,14 @@
             ],
             "index": "pypi",
             "version": "==0.2.5"
+        },
+        "zipp": {
+            "hashes": [
+                "sha256:05b45f1ee8f807d0cc928485ca40a07cb491cf092ff587c0df9cb1fd154848d2",
+                "sha256:47c40d7fe183a6f21403a199b3e4192cca5774656965b0a4988ad2f8feb5f009"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==3.8.1"
         }
     },
     "develop": {}
