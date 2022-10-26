@@ -49,14 +49,14 @@ $ pipenv install && pipenv shell
 # =>  . /python-p3-working-with-seed-data/.venv/bin/activate
 # => $  . /python-p3-working-with-seed-data/.venv/bin/activate
 
-$ cd seed_db && alembic upgrade head
+$ cd app && alembic upgrade head
 ```
 
 In this application, we have two migrations: one for our declarative `Base`,
 and a second for a table called `games`.
 
 ```py
-# db.py
+# models.py
 
 class Game(Base):
     __tablename__ = 'games'
@@ -80,10 +80,10 @@ using built-in methods that will write SQL code for us. For instance, to create
 a new record in the `games` table, you can open up the Python shell, generate
 a SQLAlchemy session, create an instance of the `Game` model, and commit it to
 the session. To simplify this even further, we've used `app/debug.py` to create
-a session and `import` relevant classes. Run `debug.py` from the `seed_db` and
+a session and `import` relevant classes. Run `debug.py` from the `app`
 directory and enter the following into the `ipdb` shell:
 
-```py
+```console
 botw = Game(title="Breath of the Wild", platform="Switch", genre="Adventure", price=60)
 session.add(botw)
 session.commit()
@@ -91,7 +91,7 @@ session.commit()
 
 Awesome! Our database now has some data in it. We can create a few more games:
 
-```py
+```console
 ffvii = Game(title="Final Fantasy VII", platform="Playstation", genre="RPG", price=30)
 mk8 = Game(title="Mario Kart 8", platform="Switch", genre="Racing", price=50)
 session.bulk_save_objects([ffvii, mk8])
@@ -151,7 +151,7 @@ write code that uses SQLAlchemy methods to create new records. Add this to
 the `seed.py` file below the creation of the `session` object:
 
 ```py
-# seed_db/seed.py
+# app/seed.py
 
 ...
 
