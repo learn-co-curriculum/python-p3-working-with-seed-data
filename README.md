@@ -79,8 +79,8 @@ With SQLAlchemy, we've seen how simple it is to add data to a database by
 using built-in methods that will write SQL code for us. For instance, to create
 a new record in the `games` table, you can open up the Python shell, generate
 a SQLAlchemy session, create an instance of the `Game` model, and commit it to
-the session. To simplify this even further, we've used `app/debug.py` to create
-a session and `import` relevant classes. Run `debug.py` from the `app`
+the session. To simplify this even further, we've used `lib/debug.py` to create
+a session and `import` relevant classes. Run `debug.py` from the `lib/`
 directory and enter the following into the `ipdb` shell:
 
 ```console
@@ -132,7 +132,7 @@ Git not to track any `.sqlite3` files). There's got to be a better way!
 The common approach to this problem is that instead of sharing the actual
 database with other developers, we share the **instructions for creating data in
 the database** with other developers. By convention, the way we do this is by
-creating a Python file, `app/seed.py`, which is used to populate our database.
+creating a Python file, `lib/seed.py`, which is used to populate our database.
 
 We've already seen a similar scenario by which we can share instructions for
 setting up a database with other developers: using SQLAlchemy migrations to
@@ -151,7 +151,7 @@ write code that uses SQLAlchemy methods to create new records. Add this to
 the `seed.py` file below the creation of the `session` object:
 
 ```py
-# app/seed.py
+# lib/seed.py
 
 ...
 
