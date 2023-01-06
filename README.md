@@ -49,7 +49,7 @@ $ pipenv install && pipenv shell
 # =>  . /python-p3-working-with-seed-data/.venv/bin/activate
 # => $  . /python-p3-working-with-seed-data/.venv/bin/activate
 
-$ cd app && alembic upgrade head
+$ cd lib && alembic upgrade head
 ```
 
 In this application, we have two migrations: one for our declarative `Base`,
