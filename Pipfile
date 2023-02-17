@@ -10,6 +10,7 @@ importlib-resources = "5.10.0"
 ipdb = "0.13.9"
 SQLAlchemy = "1.4.41"
 faker = "15.0.0"
+pytest = "*"
 
 [requires]
 python_full_version = "3.8.13"
