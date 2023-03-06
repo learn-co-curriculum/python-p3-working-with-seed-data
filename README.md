@@ -101,7 +101,7 @@ session.commit()
 <details>
   <summary>
     <em><code>bulk_save_objects</code> is a useful method, but it doesn't
-        carry out all the same tasks as <code>add</code>. What attributes will
+        carry out all the same tasks as <code>add_all</code>. What attributes will
         <code>botw</code> have that <code>ffvii</code> and <code>mk8</code>
         are still missing?</em>
   </summary>
@@ -114,6 +114,7 @@ session.commit()
      SQLAlchemy to execute statements for each record individually.</p>
   <p>Make sure to think about the features that you need before you pick which
      CRUD methods to use!</p>
+  <p>We're going to use `add_all()` from here on out.</p>
 </details>
 <br/>
 
@@ -159,7 +160,7 @@ botw = Game(title="Breath of the Wild", platform="Switch", genre="Adventure", pr
 ffvii = Game(title="Final Fantasy VII", platform="Playstation", genre="RPG", price=30)
 mk8 = Game(title="Mario Kart 8", platform="Switch", genre="Racing", price=50)
 
-session.bulk_save_objects([botw, ffvii, mk8])
+session.add_all([botw, ffvii, mk8])
 session.commit()
 ```
 
@@ -187,6 +188,9 @@ botw = Game(title="Breath of the Wild", platform="Switch", genre="Adventure", pr
 ffvii = Game(title="Final Fantasy VII", platform="Playstation", genre="RPG", price=30)
 mk8 = Game(title="Mario Kart 8", platform="Switch", genre="Racing", price=50)
 ccs = Game(title="Candy Crush Saga", platform="Mobile", genre="Puzzle", price=0)
+
+session.add_all([botw, ffvii, mk8, ccs])
+session.commit()
 ```
 
 Run the seed file again, and let's see our updated data:
@@ -209,8 +213,12 @@ this complication in the future. Add these commands right after the
 instantiation of your `session` (but before the creation of any new records):
 
 ```py
+# clear old data
 session.query(Game).delete()
 session.commit()
+
+# add new data
+botw = ...
 ```
 
 These commands remove the data from the `games` table and then re-run the
@@ -279,7 +287,7 @@ games = [
     )
 for i in range(50)]
 
-session.bulk_save_objects(games)
+session.add_all(games)
 session.commit()
 ```
 
@@ -325,7 +333,8 @@ to quickly generate randomized seed data.
 
 - [SQLAlchemy ORM Documentation][sqlaorm]
 - [Faker Documentation][faker]
+- [Standard Providers - Faker](https://faker.readthedocs.io/en/master/providers.html)
 - [random — Generate pseudo-random numbers - Python](https://docs.python.org/3/library/random.html)
 
-[faker]: https://faker.readthedocs.io/en/master/index.html]
+[faker]: https://faker.readthedocs.io/en/master/index.html
 [sqlaorm]: https://docs.sqlalchemy.org/en/14/orm/
