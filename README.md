@@ -297,8 +297,8 @@ session.commit()
         variable?</em>
   </summary>
 
-  <h3>List Interpretation.</h3>
-  <p>Interpretations allow us to create lists without using loops. They're a
+  <h3>List Comprehension.</h3>
+  <p>Comprehensions allow us to create lists without using loops. They're a
      powerful staple of Python code, so make sure you don't forget!</p>
 </details>
 <br/>
